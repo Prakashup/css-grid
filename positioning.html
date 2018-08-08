@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> CSS Grid | Positioning of element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+            text-shadow: 1px 2px 2px #b5acac;
+            text-align: center;
+        }
+        .header {
+            background-color: #96ceb4;
+        }
+
+        .aside {
+            background-color: #ff6f69;
+        }
+
+        .article {
+            background-color: #ffcc5c;
+        }
+
+        .footer {
+            background-color: #88d8b0;
+
+        }
+        .container1 {
+            margin-top: 50px;
+            box-shadow: 1px 2px 3px #4c4646;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-areas:
+                    "header header header  header  header  header"
+                    "aside  aside  article article article article"
+                    "footer footer footer  footer  footer  footer";
+        }
+
+        .container2 {
+            display: grid;
+            box-shadow: 1px 2px 3px #4c4646;
+            grid-template-columns: repeat(6, 1fr);
+            margin-top: 100px;
+            grid-template-areas:
+                    "aside aside header  header  header  header"
+                    "aside aside article article article article"
+                    "aside aside footer  footer  footer  footer";
+        }
+
+        .container1 > *, .container2 > * {
+            padding: 20px;
+        }
+
+        .header {
+            grid-area: header;
+        }
+        .aside {
+            grid-area: aside;
+        }
+        .article {
+            grid-area: article;
+        }
+        .footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container1">
+    <header class="header">Header</header>
+    <aside class="aside">Aside</aside>
+    <article class="article">Article content</article>
+    <footer class="footer">Footer</footer>
+</div>
+
+
+<div class="container2">
+    <header class="header">Header</header>
+    <aside class="aside">Aside</aside>
+    <article class="article">Article Content</article>
+    <footer class="footer">Footer</footer>
+</div>
+</body>
+</html>
